@@ -1,8 +1,10 @@
-from riotwatcher import RiotWatcher, ApiError
-
-from Match import Match
+from riotwatcher import RiotWatcher
+from dto.Match import Match
+import settings
+import os
 
 if __name__ == '__main__':
-    watcher = RiotWatcher('RGAPI-d7c7530e-1eaf-4888-9ce0-e039e268635d')
-    region = 'na1'
-    print(Match(watcher.match.by_id(region, "3202121125")))
+    watcher = RiotWatcher(os.getenv('RIOT_API_KEY'))
+    region = os.getenv('REGION')
+    print(region)
+    print(Match(watcher.match.by_id(region, "3202121125")).json)
