@@ -1,4 +1,4 @@
-from Ban import Ban
+from dto.Ban import Ban
 
 
 class Team:

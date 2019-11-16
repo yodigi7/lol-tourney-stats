@@ -1,6 +1,6 @@
-from Participant import Participant
-from ParticipantIdentity import ParticipantIdentity
-from Team import Team
+from dto.Participant import Participant
+from dto.ParticipantIdentity import ParticipantIdentity
+from dto.Team import Team
 
 
 class Match:

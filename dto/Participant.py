@@ -1,5 +1,5 @@
-from Stats import Stats
-from Timeline import Timeline
+from dto.Stats import Stats
+from dto.Timeline import Timeline
 
 
 class Participant:
