@@ -12,7 +12,11 @@
     "url": "git+https://github.com/yodigi7/lol-tourney-stats.git"
   },
   "keywords": [
-    "riot"
+    "riot",
+    "league of legends",
+    "LoL",
+    "games",
+    "Riot"
   ],
   "author": "yodigi7",
   "license": "ISC",
