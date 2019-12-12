@@ -7,9 +7,20 @@ env('.env')
 app.use(express.json());
 RiotApi = RiotApi(process.env.RIOT_API_KEY, RiotApi.defaultConfig);
 
+let tournamentProvider = async function(body) {
+    try {
+        let response = await RiotApi.req('americas', 'tournamentStubV4.registerProviderData', {}, {}, body);
+        return {
+            providerId: response
+        };
+    } catch (err) {
+        console.error(err.response);
+    }
+}
+
 let tournament = async function(body) {
     try {
-        let response = await RiotApi.send('americas', 'tournamentStubV4.registerTournament', {}, {}, body);
+        let response = await RiotApi.req('americas', 'tournamentStubV4.registerTournament', {}, {}, body);
         return {
             tournamentId: response
         };
@@ -18,14 +29,17 @@ let tournament = async function(body) {
     }
 }
 
-let tournamentProvider = async function(body) {
+let tournamentCodes = async function(body) {
     try {
-        let response = await RiotApi.send('americas', 'tournamentStubV4.registerProviderData', {}, {}, body);
+        let count  = body.count;
+        let tournamentId = body.tournamentId;
+        delete body.count; delete body.tournamentId;
+        let response = await RiotApi.req('americas', 'tournamentStubV4.createTournamentCode', {}, {count: count, tournamentId: tournamentId}, body);
         return {
-            providerId: 568
+            tournamentId: response
         };
     } catch (err) {
-        console.error(err.response);
+        console.error(err.response.body);
     }
 }
 
@@ -37,6 +51,12 @@ app.post('/tournament-provider', async function(req, res){
 
 app.post('/tournament', async function(req, res){
     tournament(req.body)
+        .then(result => res.json(result))
+        .catch(err => console.error(err));
+});
+
+app.post('/tournament-codes', async function(req, res){
+    tournamentCodes(req.body)
         .then(result => res.json(result))
         .catch(err => console.error(err));
 });
