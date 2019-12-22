@@ -12,6 +12,16 @@ export class MatchParser {
     this.playerStatistics = [];
   }
 
+  static aggregateStats(
+    riotMatches: Array<RiotMatch>
+  ): Array<AggregatePersonStatistics> {
+    return MatchParser.aggregatePersonsStatistics(
+      riotMatches.flatMap((match: RiotMatch) =>
+        MatchParser.riotMatchToPersonStatistics(match)
+      )
+    );
+  }
+
   static aggregatePersonsStatistics(
     personsStatistics: Array<PersonStatistics>
   ): Array<AggregatePersonStatistics> {

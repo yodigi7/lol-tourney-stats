@@ -8,9 +8,10 @@
     "build": "tsc",
     "fmt": "prettier --write src/**/*.ts test/**/*.ts",
     "start": "ts-node-dev --respawn --clear ./src/index.ts",
+    "debug": "ts-node-dev --respawn --clear ./src/index.ts",
     "mocha": "mocha -r ts-node/register test/**/*.spec.ts",
     "lint": "eslint src/**/*.ts --ext .js,.ts",
-    "dev": "node ./dist/index.js"
+    "dev": "node ./dist/src/index.js"
   },
   "repository": {
     "type": "git",
