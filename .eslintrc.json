@@ -24,6 +24,7 @@
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "prefer-const": [1],
     "@typescript-eslint/explicit-function-return-type": [2],
     "@typescript-eslint/no-var-requires": [1],
     "@typescript-eslint/ban-ts-ignore": [1]
