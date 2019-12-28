@@ -1,8 +1,8 @@
-import { RiotMatch } from "./riotInterfaces";
+import { RiotMatch } from "../../lol-tournament-stats/src/riotInterfaces";
 import {
   PersonStatistics,
   AggregatePersonStatistics
-} from "./internalInterfaces";
+} from "../../lol-tournament-stats/src/internalInterfaces";
 
 export class MatchParser {
   playerStatistics: Array<AggregatePersonStatistics>;
@@ -52,9 +52,8 @@ export class MatchParser {
     };
     return {
       gamesPlayed: personStatistics.length,
-      kda: average("kda"),
+      avgKda: average("kda"),
       averageGameLength: average("gameDuration"),
-      creepsKilled: average("creepsKilled"),
       winRatio:
         personStatistics.filter(stats => stats.win).length /
         personStatistics.length,
@@ -62,61 +61,61 @@ export class MatchParser {
       currentAccountId: personStatistics[0].currentAccountId,
       summonerId: personStatistics[0].summonerId,
       accountId: personStatistics[0].accountId,
-      neutralMinionsKilledTeamJungle: average("neutralMinionsKilledTeamJungle"),
-      visionScore: average("visionScore"),
-      magicDamageDealtToChampions: average("magicDamageDealtToChampions"),
-      largestMultiKill: average("largestMultiKill"),
-      totalTimeCrowdControlDealt: average("totalTimeCrowdControlDealt"),
-      longestTimeSpentLiving: average("longestTimeSpentLiving"),
-      tripleKills: average("tripleKills"),
-      kills: average("kills"),
-      totalScoreRank: average("totalScoreRank"),
-      neutralMinionsKilled: average("neutralMinionsKilled"),
-      damageDealtToTurrets: average("damageDealtToTurrets"),
-      physicalDamageDealtToChampions: average("physicalDamageDealtToChampions"),
-      damageDealtToObjectives: average("damageDealtToObjectives"),
-      totalUnitsHealed: average("totalUnitsHealed"),
-      totalDamageTaken: average("totalDamageTaken"),
-      wardsKilled: average("wardsKilled"),
-      largestCriticalStrike: average("largestCriticalStrike"),
-      largestKillingSpree: average("largestKillingSpree"),
-      quadraKills: average("quadraKills"),
-      magicDamageDealt: average("magicDamageDealt"),
-      damageSelfMitigated: average("damageSelfMitigated"),
-      magicalDamageTaken: average("magicalDamageTaken"),
-      trueDamageTaken: average("trueDamageTaken"),
-      assists: average("assists"),
-      goldSpent: average("goldSpent"),
-      trueDamageDealt: average("trueDamageDealt"),
-      participantId: average("participantId"),
-      physicalDamageDealt: average("physicalDamageDealt"),
-      sightWardsBoughtInGame: average("sightWardsBoughtInGame"),
-      totalDamageDealtToChampions: average("totalDamageDealtToChampions"),
-      physicalDamageTaken: average("physicalDamageTaken"),
-      totalPlayerScore: average("totalPlayerScore"),
-      objectivePlayerScore: average("objectivePlayerScore"),
-      totalDamageDealt: average("totalDamageDealt"),
-      neutralMinionsKilledEnemyJungle: average(
+      avgNeutralMinionsKilledTeamJungle: average("neutralMinionsKilledTeamJungle"),
+      avgVisionScore: average("visionScore"),
+      avgMagicDamageDealtToChampions: average("magicDamageDealtToChampions"),
+      avgLargestMultiKill: average("largestMultiKill"),
+      avgTotalTimeCrowdControlDealt: average("totalTimeCrowdControlDealt"),
+      avgLongestTimeSpentLiving: average("longestTimeSpentLiving"),
+      avgTripleKills: average("tripleKills"),
+      avgKills: average("kills"),
+      avgTotalScoreRank: average("totalScoreRank"),
+      avgNeutralMinionsKilled: average("neutralMinionsKilled"),
+      avgDamageDealtToTurrets: average("damageDealtToTurrets"),
+      avgPhysicalDamageDealtToChampions: average("physicalDamageDealtToChampions"),
+      avgDamageDealtToObjectives: average("damageDealtToObjectives"),
+      avgTotalUnitsHealed: average("totalUnitsHealed"),
+      avgTotalDamageTaken: average("totalDamageTaken"),
+      avgWardsKilled: average("wardsKilled"),
+      avgLargestCriticalStrike: average("largestCriticalStrike"),
+      avgLargestKillingSpree: average("largestKillingSpree"),
+      avgQuadraKills: average("quadraKills"),
+      avgMagicDamageDealt: average("magicDamageDealt"),
+      avgDamageSelfMitigated: average("damageSelfMitigated"),
+      avgMagicalDamageTaken: average("magicalDamageTaken"),
+      avgTrueDamageTaken: average("trueDamageTaken"),
+      avgAssists: average("assists"),
+      avgGoldSpent: average("goldSpent"),
+      avgTrueDamageDealt: average("trueDamageDealt"),
+      avgParticipantId: average("participantId"),
+      avgPhysicalDamageDealt: average("physicalDamageDealt"),
+      avgSightWardsBoughtInGame: average("sightWardsBoughtInGame"),
+      avgTotalDamageDealtToChampions: average("totalDamageDealtToChampions"),
+      avgPhysicalDamageTaken: average("physicalDamageTaken"),
+      avgTotalPlayerScore: average("totalPlayerScore"),
+      avgObjectivePlayerScore: average("objectivePlayerScore"),
+      avgTotalDamageDealt: average("totalDamageDealt"),
+      avgNeutralMinionsKilledEnemyJungle: average(
         "neutralMinionsKilledEnemyJungle"
       ),
-      deaths: average("deaths"),
-      wardsPlaced: average("wardsPlaced"),
-      perkPrimaryStyle: average("perkPrimaryStyle"),
-      perkSubStyle: average("perkSubStyle"),
-      turretKills: average("turretKills"),
-      trueDamageDealtToChampions: average("trueDamageDealtToChampions"),
-      goldEarned: average("goldEarned"),
-      killingSprees: average("killingSprees"),
-      unrealKills: average("unrealKills"),
-      champLevel: average("champLevel"),
-      doubleKills: average("doubleKills"),
-      inhibitorKills: average("inhibitorKills"),
-      combatPlayerScore: average("combatPlayerScore"),
-      visionWardsBoughtInGame: average("visionWardsBoughtInGame"),
-      pentaKills: average("pentaKills"),
-      totalHeal: average("totalHeal"),
-      totalMinionsKilled: average("totalMinionsKilled"),
-      timeCCingOthers: average("timeCCingOthers")
+      avgDeaths: average("deaths"),
+      avgWardsPlaced: average("wardsPlaced"),
+      avgPerkPrimaryStyle: average("perkPrimaryStyle"),
+      avgPerkSubStyle: average("perkSubStyle"),
+      avgTurretKills: average("turretKills"),
+      avgTrueDamageDealtToChampions: average("trueDamageDealtToChampions"),
+      avgGoldEarned: average("goldEarned"),
+      avgKillingSprees: average("killingSprees"),
+      avgUnrealKills: average("unrealKills"),
+      avgChampLevel: average("champLevel"),
+      avgDoubleKills: average("doubleKills"),
+      avgInhibitorKills: average("inhibitorKills"),
+      avgCombatPlayerScore: average("combatPlayerScore"),
+      avgVisionWardsBoughtInGame: average("visionWardsBoughtInGame"),
+      avgPentaKills: average("pentaKills"),
+      avgTotalHeal: average("totalHeal"),
+      avgTotalMinionsKilled: average("totalMinionsKilled"),
+      avgTimeCCingOthers: average("timeCCingOthers")
     };
   }
 
@@ -149,7 +148,6 @@ export class MatchParser {
           participant.timeline.damageTakenDiffPerMinDeltas,
         damageTakenPerMinDeltas: participant.timeline.damageTakenPerMinDeltas,
         kda: 0,
-        creepsKilled: 0,
         neutralMinionsKilledTeamJungle:
           participant.stats.neutralMinionsKilledTeamJungle,
         visionScore: participant.stats.visionScore,
@@ -221,10 +219,6 @@ export class MatchParser {
       personStatistics.kda =
         (personStatistics.kills + personStatistics.assists) /
         personStatistics.deaths;
-      personStatistics.creepsKilled =
-        personStatistics.totalMinionsKilled -
-        personStatistics.neutralMinionsKilledEnemyJungle -
-        personStatistics.neutralMinionsKilledTeamJungle;
       personsStatistics.push(personStatistics);
     }
 

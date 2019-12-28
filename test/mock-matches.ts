@@ -1692,7 +1692,6 @@ let riotMatch1: RiotMatch = {
 let person1match1: PersonStatistics = {
   kda: 10,
   gameDuration: 1511,
-  creepsKilled: 173,
   totalScoreRank: 0,
   summonerName: "Z3R0BII",
   currentAccountId: "sU4dAs0AwQBrxKBxVUW_ASDkX-4uccmG_8LafZW5QaIbcQ",
