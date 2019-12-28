@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Backend server",
-  "main": "index.js",
+  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
@@ -10,7 +10,7 @@
     "test": "npm run lint && prettier --check src/**/*.ts && npm run mocha",
     "build": "tsc",
     "fmt": "prettier --write src/**/*.ts test/**/*.ts",
-    "start": "ts-node-dev --respawn --clear ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "debug": "ts-node-dev --respawn --clear ./src/index.ts",
     "mocha": "mocha -r ts-node/register test/**/*.spec.ts",
     "lint": "eslint src/**/*.ts --ext .js,.ts",
@@ -35,7 +35,7 @@
   "homepage": "https://github.com/yodigi7/lol-tourney-stats#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "lol-tournament-stats": "0.0.2",
+    "lol-tournament-stats": "0.0.3",
     "node-env-file": "^0.1.8",
     "node-fetch": "^2.6.0",
     "request": "^2.88.0",

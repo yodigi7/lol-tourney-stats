@@ -1,5 +1,5 @@
-import { RiotMatch } from "../src/riotInterfaces";
-import { PersonStatistics } from "../src/internalInterfaces";
+import { RiotMatch } from "lol-tournament-stats";
+// import { PersonStatistics } from "../src/internalInterfaces";
 
 let riotMatch1: RiotMatch = {
   seasonId: 13,
@@ -1689,101 +1689,102 @@ let riotMatch1: RiotMatch = {
   gameCreation: 1571701253800
 };
 
-let person1match1: PersonStatistics = {
-  kda: 10,
-  gameDuration: 1511,
-  totalScoreRank: 0,
-  summonerName: "Z3R0BII",
-  currentAccountId: "sU4dAs0AwQBrxKBxVUW_ASDkX-4uccmG_8LafZW5QaIbcQ",
-  summonerId: "pleCVlx099HURfZvoMd-Uq2ojbOrNQwY6JO1jzr9hXVbjNU",
-  accountId: "sU4dAs0AwQBrxKBxVUW_ASDkX-4uccmG_8LafZW5QaIbcQ",
-  participantId: 1,
-  csDiffPerMinDeltas: {
-    "0-10": 0.40000000000000036,
-    "10-20": 1.5
-  },
-  goldPerMinDeltas: {
-    "0-10": 307,
-    "10-20": 661.4000000000001
-  },
-  xpDiffPerMinDeltas: {
-    "0-10": 51.20000000000002,
-    "10-20": 311.9
-  },
-  creepsPerMinDeltas: {
-    "0-10": 6.800000000000001,
-    "10-20": 9.1
-  },
-  xpPerMinDeltas: {
-    "0-10": 470.1,
-    "10-20": 718.3
-  },
-  damageTakenDiffPerMinDeltas: {
-    "0-10": -204.59999999999997,
-    "10-20": -475.6
-  },
-  damageTakenPerMinDeltas: {
-    "0-10": 343.4,
-    "10-20": 595.1
-  },
-  neutralMinionsKilledTeamJungle: 4,
-  visionScore: 9,
-  magicDamageDealtToChampions: 24763,
-  largestMultiKill: 3,
-  totalTimeCrowdControlDealt: 68,
-  longestTimeSpentLiving: 372,
-  tripleKills: 1,
-  kills: 14,
-  neutralMinionsKilled: 17,
-  damageDealtToTurrets: 13257,
-  physicalDamageDealtToChampions: 1331,
-  damageDealtToObjectives: 18975,
-  totalUnitsHealed: 1,
-  totalDamageTaken: 13919,
-  wardsKilled: 0,
-  largestCriticalStrike: 0,
-  largestKillingSpree: 11,
-  quadraKills: 0,
-  magicDamageDealt: 170961,
-  firstBloodAssist: false,
-  damageSelfMitigated: 8781,
-  magicalDamageTaken: 2572,
-  firstInhibitorKill: false,
-  trueDamageTaken: 1673,
-  assists: 6,
-  goldSpent: 10500,
-  trueDamageDealt: 6301,
-  physicalDamageDealt: 9389,
-  sightWardsBoughtInGame: 0,
-  totalDamageDealtToChampions: 26191,
-  physicalDamageTaken: 9672,
-  totalPlayerScore: 0,
-  win: true,
-  objectivePlayerScore: 0,
-  totalDamageDealt: 186652,
-  neutralMinionsKilledEnemyJungle: 13,
-  deaths: 2,
-  wardsPlaced: 5,
-  perkPrimaryStyle: 8200,
-  perkSubStyle: 8100,
-  turretKills: 2,
-  firstBloodKill: true,
-  trueDamageDealtToChampions: 96,
-  goldEarned: 13502,
-  killingSprees: 2,
-  unrealKills: 0,
-  firstTowerAssist: false,
-  firstTowerKill: false,
-  champLevel: 16,
-  doubleKills: 1,
-  inhibitorKills: 0,
-  firstInhibitorAssist: true,
-  combatPlayerScore: 0,
-  visionWardsBoughtInGame: 0,
-  pentaKills: 0,
-  totalHeal: 6107,
-  totalMinionsKilled: 190,
-  timeCCingOthers: 27
-};
+// let person1match1: PersonStatistics = {
+//   kda: 10,
+//   gameDuration: 1511,
+//   totalScoreRank: 0,
+//   summonerName: "Z3R0BII",
+//   currentAccountId: "sU4dAs0AwQBrxKBxVUW_ASDkX-4uccmG_8LafZW5QaIbcQ",
+//   summonerId: "pleCVlx099HURfZvoMd-Uq2ojbOrNQwY6JO1jzr9hXVbjNU",
+//   accountId: "sU4dAs0AwQBrxKBxVUW_ASDkX-4uccmG_8LafZW5QaIbcQ",
+//   participantId: 1,
+//   csDiffPerMinDeltas: {
+//     "0-10": 0.40000000000000036,
+//     "10-20": 1.5
+//   },
+//   goldPerMinDeltas: {
+//     "0-10": 307,
+//     "10-20": 661.4000000000001
+//   },
+//   xpDiffPerMinDeltas: {
+//     "0-10": 51.20000000000002,
+//     "10-20": 311.9
+//   },
+//   creepsPerMinDeltas: {
+//     "0-10": 6.800000000000001,
+//     "10-20": 9.1
+//   },
+//   xpPerMinDeltas: {
+//     "0-10": 470.1,
+//     "10-20": 718.3
+//   },
+//   damageTakenDiffPerMinDeltas: {
+//     "0-10": -204.59999999999997,
+//     "10-20": -475.6
+//   },
+//   damageTakenPerMinDeltas: {
+//     "0-10": 343.4,
+//     "10-20": 595.1
+//   },
+//   neutralMinionsKilledTeamJungle: 4,
+//   visionScore: 9,
+//   magicDamageDealtToChampions: 24763,
+//   largestMultiKill: 3,
+//   totalTimeCrowdControlDealt: 68,
+//   longestTimeSpentLiving: 372,
+//   tripleKills: 1,
+//   kills: 14,
+//   neutralMinionsKilled: 17,
+//   damageDealtToTurrets: 13257,
+//   physicalDamageDealtToChampions: 1331,
+//   damageDealtToObjectives: 18975,
+//   totalUnitsHealed: 1,
+//   totalDamageTaken: 13919,
+//   wardsKilled: 0,
+//   largestCriticalStrike: 0,
+//   largestKillingSpree: 11,
+//   quadraKills: 0,
+//   magicDamageDealt: 170961,
+//   firstBloodAssist: false,
+//   damageSelfMitigated: 8781,
+//   magicalDamageTaken: 2572,
+//   firstInhibitorKill: false,
+//   trueDamageTaken: 1673,
+//   assists: 6,
+//   goldSpent: 10500,
+//   trueDamageDealt: 6301,
+//   physicalDamageDealt: 9389,
+//   sightWardsBoughtInGame: 0,
+//   totalDamageDealtToChampions: 26191,
+//   physicalDamageTaken: 9672,
+//   totalPlayerScore: 0,
+//   win: true,
+//   objectivePlayerScore: 0,
+//   totalDamageDealt: 186652,
+//   neutralMinionsKilledEnemyJungle: 13,
+//   deaths: 2,
+//   wardsPlaced: 5,
+//   perkPrimaryStyle: 8200,
+//   perkSubStyle: 8100,
+//   turretKills: 2,
+//   firstBloodKill: true,
+//   trueDamageDealtToChampions: 96,
+//   goldEarned: 13502,
+//   killingSprees: 2,
+//   unrealKills: 0,
+//   firstTowerAssist: false,
+//   firstTowerKill: false,
+//   champLevel: 16,
+//   doubleKills: 1,
+//   inhibitorKills: 0,
+//   firstInhibitorAssist: true,
+//   combatPlayerScore: 0,
+//   visionWardsBoughtInGame: 0,
+//   pentaKills: 0,
+//   totalHeal: 6107,
+//   totalMinionsKilled: 190,
+//   timeCCingOthers: 27
+// };
 
-export { riotMatch1, person1match1 };
+// export { riotMatch1, person1match1 };
+export { riotMatch1}
