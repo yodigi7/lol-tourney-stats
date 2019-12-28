@@ -1787,4 +1787,4 @@ let riotMatch1: RiotMatch = {
 // };
 
 // export { riotMatch1, person1match1 };
-export { riotMatch1}
+export { riotMatch1 };

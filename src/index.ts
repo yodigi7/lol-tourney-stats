@@ -2,6 +2,7 @@ import express from "express";
 import { tournamentProvider } from "./tournamentProvider";
 import { tournament } from "./tournament";
 import { tournamentCodes } from "./tournamentCodes";
+import { getStats } from "./get-stats";
 // let express = require('express');
 const app = express();
 
@@ -34,4 +35,10 @@ app.post("/tournament-codes", async (req, res) => {
     .catch(err => console.error(err));
 });
 
-app.listen(3000);
+app.post("/get-stats", async (req, res) => {
+  getStats(req.body)
+    .then(result => res.json(result))
+    .catch(err => console.error(err));
+});
+
+app.listen(3000, () => console.log("Server started up"));
