@@ -2,7 +2,7 @@ import TeemoJS from "../TeemoJS/src/index";
 import { MatchParser } from "lol-tournament-stats";
 
 interface Id {
-  matchId: string;
+  matchId?: string;
   tournamentCode?: string;
 }
 
@@ -18,18 +18,16 @@ export async function getStats(body: GetStatsBody): Promise<any> {
   try {
     stats = await Promise.all(body.ids.map(async id => {
       if (id.tournamentCode) {
-          console.log(id);
+        id.matchId = await RiotApi.req("na", "lol.matchV4.getMatchIdsByTournamentCode", id.tournamentCode);
         return await RiotApi.req(
           "na",
           "lol.matchV4.getMatchByTournamentCode",
-          [id.matchId, id.tournamentCode]
-        );
+          [id.matchId, id.tournamentCode]);
       } else {
         return await RiotApi.req("na", "lol.matchV4.getMatch", id.matchId);
       }
     }));
   } catch (err) {
-    console.log(err.response.body);
     const error = await err.response.text();
     return JSON.parse(error);
   }
